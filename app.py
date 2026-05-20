@@ -33,9 +33,9 @@ Seleccione un modelo, ingrese los datos solicitados y obtenga la predicción del
 # URLS DE MODELOS EN GITHUB
 # ==========================================
 
-LOGISTIC_MODEL_URL = "https://raw.githubusercontent.com/acardenas2207/mhr/main/MRH/logistic_regression_model.pkl"
+LOGISTIC_MODEL_URL = "https://raw.githubusercontent.com/acardenas2207/mhr/main/modelos/logistic_regression_model.pkl"
 
-TREE_MODEL_URL = "https://raw.githubusercontent.com/acardenas2207/mhr/main/MRH/decision_tree_model.pkl"
+TREE_MODEL_URL = "https://raw.githubusercontent.com/acardenas2207/mhr/main/modelos/decision_tree_model.pkl"
 
 # ==========================================
 # FUNCIÓN PARA CARGAR MODELOS
