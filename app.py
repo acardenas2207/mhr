@@ -120,18 +120,15 @@ if st.button("🔍 Obtener Predicción"):
     if predicted_risk == "low risk":
 
         st.success(f"🟢 Nivel de riesgo predicho: {predicted_risk}")
-        st.success("La paciente presenta un riesgo bajo.")
-
+     
     elif predicted_risk == "mid risk":
 
         st.warning(f"🟡 Nivel de riesgo predicho: {predicted_risk}")
-        st.warning("La paciente presenta un riesgo medio.")
-
+     
     elif predicted_risk == "high risk":
 
         st.error(f"🔴 Nivel de riesgo predicho: {predicted_risk}")
-        st.error("La paciente presenta un riesgo alto.")
-
+     
     else:
 
         st.info("No se pudo determinar el nivel de riesgo.")
