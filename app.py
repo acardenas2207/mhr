@@ -139,3 +139,20 @@ if st.button("🔍 Obtener Predicción"):
 
 st.markdown("---")
 st.caption("Proyecto de Machine Learning - Maternal Health Risk")
+
+# ==========================================
+# INFORMACIÓN ADICIONAL
+# ==========================================
+
+st.markdown("---")
+
+st.markdown("### 📘 Notebook en Google Colab")
+
+st.markdown(
+    "[Abrir proyecto en Google Colab](https://colab.research.google.com/drive/1OtZFy43oVXSpVNhbgy3eoIWNfgnDo7rg?usp=sharing)"
+)
+
+st.markdown("""
+**Author:** Julio Alberto Cárdenas Rincón  
+**Cod ISIL:** 45862810
+""")
