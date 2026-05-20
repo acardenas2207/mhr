@@ -82,7 +82,7 @@ DiastolicBP = st.number_input("Presión Diastólica", min_value=30, max_value=20
 
 BS = st.number_input("Nivel de azúcar", min_value=0.0, max_value=30.0, value=6.5)
 
-BodyTemp = st.number_input("Temperatura", min_value=90.0, max_value=110.0, value=98.0)
+BodyTemp = st.number_input("Temperatura en F°", min_value=90.0, max_value=110.0, value=98.0)
 
 HeartRate = st.number_input("Frecuencia Cardíaca", min_value=40, max_value=200, value=75)
 
