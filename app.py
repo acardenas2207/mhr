@@ -91,12 +91,12 @@ HeartRate = st.number_input("HeartRate", min_value=40, max_value=200, value=75)
 # ==========================================
 
 input_data = pd.DataFrame({
-    'Edad': [Age],
-    'Presión Sistólica': [SystolicBP],
-    'Presión Sistólica': [DiastolicBP],
-    'Nivel de glucosa': [BS],
-    'Temperatura': [BodyTemp],
-    'Freuencia Cardiaca': [HeartRate]
+    'Age': [Edad],
+    'SystolicBP': [Presión Sistólica],
+    'DiastolicBP': [Presión Sistólica],
+    'BS': [Nivel de glucosa],
+    'BodyTemp': [Temperatura],
+    'HeartRate': [Freuencia Cardiaca]
 })
 
 # ==========================================
