@@ -117,7 +117,7 @@ if st.button("🔍 Obtener Predicción"):
     predicted_risk = risk_labels.get(prediction, "Desconocido")
 
     # Mostrar resultado
-    st.success(f"Nivel de riesgo predicho: {predicted_risk}")
+    # st.success(f"Nivel de riesgo predicho: {predicted_risk}")
 
     # Mensajes adicionales
     if predicted_risk == "low risk":
