@@ -107,15 +107,26 @@ if st.button("🔍 Obtener Predicción"):
 
     prediction = model.predict(input_data)[0]
 
-    st.success(f"Nivel de riesgo predicho: {prediction}")
+    # Conversión de etiquetas numéricas
+    risk_labels = {
+        1: "low risk",
+        2: "mid risk",
+        3: "high risk"
+    }
 
-    if prediction == "low risk":
+    predicted_risk = risk_labels.get(prediction, "Desconocido")
+
+    # Mostrar resultado
+    st.success(f"Nivel de riesgo predicho: {predicted_risk}")
+
+    # Mensajes adicionales
+    if predicted_risk == "low risk":
         st.info("La paciente presenta un riesgo bajo.")
 
-    elif prediction == "mid risk":
+    elif predicted_risk == "mid risk":
         st.warning("La paciente presenta un riesgo medio.")
 
-    elif prediction == "high risk":
+    elif predicted_risk == "high risk":
         st.error("La paciente presenta un riesgo alto.")
 
 # ==========================================
