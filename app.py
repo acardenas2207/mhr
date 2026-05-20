@@ -1,0 +1,126 @@
+# app.py
+
+import streamlit as st
+import pandas as pd
+import joblib
+import requests
+from io import BytesIO
+
+# ==========================================
+# CONFIGURACIÓN DE LA PÁGINA
+# ==========================================
+
+st.set_page_config(
+    page_title="Maternal Health Risk Predictor",
+    page_icon="🩺",
+    layout="centered"
+)
+
+# ==========================================
+# TÍTULO
+# ==========================================
+
+st.title("🩺 Maternal Health Risk Predictor")
+
+st.markdown("""
+Esta aplicación utiliza modelos de Machine Learning para predecir el nivel de riesgo materno
+basándose en información médica de pacientes embarazadas.
+
+Seleccione un modelo, ingrese los datos solicitados y obtenga la predicción del riesgo.
+""")
+
+# ==========================================
+# URLS DE MODELOS EN GITHUB
+# ==========================================
+
+LOGISTIC_MODEL_URL = "https://raw.githubusercontent.com/TU_USUARIO/TU_REPOSITORIO/main/MRH/logistic_regression_model.pkl"
+
+TREE_MODEL_URL = "https://raw.githubusercontent.com/TU_USUARIO/TU_REPOSITORIO/main/MRH/decision_tree_model.pkl"
+
+# ==========================================
+# FUNCIÓN PARA CARGAR MODELOS
+# ==========================================
+
+@st.cache_resource
+def load_model(url):
+    response = requests.get(url)
+    model = joblib.load(BytesIO(response.content))
+    return model
+
+# ==========================================
+# SELECCIÓN DEL MODELO
+# ==========================================
+
+model_option = st.selectbox(
+    "Seleccione el modelo:",
+    (
+        "Logistic Regression",
+        "Decision Tree"
+    )
+)
+
+# ==========================================
+# CARGA DEL MODELO
+# ==========================================
+
+if model_option == "Logistic Regression":
+    model = load_model(LOGISTIC_MODEL_URL)
+else:
+    model = load_model(TREE_MODEL_URL)
+
+# ==========================================
+# INPUTS DEL USUARIO
+# ==========================================
+
+st.subheader("Ingrese los datos médicos")
+
+Age = st.number_input("Age", min_value=1, max_value=100, value=25)
+
+SystolicBP = st.number_input("SystolicBP", min_value=50, max_value=250, value=120)
+
+DiastolicBP = st.number_input("DiastolicBP", min_value=30, max_value=200, value=80)
+
+BS = st.number_input("BS (Blood Sugar)", min_value=0.0, max_value=30.0, value=6.5)
+
+BodyTemp = st.number_input("BodyTemp", min_value=90.0, max_value=110.0, value=98.0)
+
+HeartRate = st.number_input("HeartRate", min_value=40, max_value=200, value=75)
+
+# ==========================================
+# DATAFRAME PARA PREDICCIÓN
+# ==========================================
+
+input_data = pd.DataFrame({
+    'Age': [Age],
+    'SystolicBP': [SystolicBP],
+    'DiastolicBP': [DiastolicBP],
+    'BS': [BS],
+    'BodyTemp': [BodyTemp],
+    'HeartRate': [HeartRate]
+})
+
+# ==========================================
+# BOTÓN DE PREDICCIÓN
+# ==========================================
+
+if st.button("🔍 Obtener Predicción"):
+
+    prediction = model.predict(input_data)[0]
+
+    st.success(f"Nivel de riesgo predicho: {prediction}")
+
+    if prediction == "low risk":
+        st.info("La paciente presenta un riesgo bajo.")
+
+    elif prediction == "mid risk":
+        st.warning("La paciente presenta un riesgo medio.")
+
+    elif prediction == "high risk":
+        st.error("La paciente presenta un riesgo alto.")
+
+# ==========================================
+# FOOTER
+# ==========================================
+
+st.markdown("---")
+st.caption("Proyecto de Machine Learning - Maternal Health Risk")
