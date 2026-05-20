@@ -151,7 +151,7 @@ st.markdown(
 )
 
 st.markdown("""
-**Author:** Julio Alberto Cárdenas Rincón  
+**Autor:** Julio Alberto Cárdenas Rincón  
 **Cod ISIL:** 45862810
 """)
 st.markdown("---")
