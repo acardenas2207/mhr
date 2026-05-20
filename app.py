@@ -144,8 +144,6 @@ st.caption("Proyecto de Machine Learning - Maternal Health Risk")
 # INFORMACIÓN ADICIONAL
 # ==========================================
 
-st.markdown("---")
-
 st.markdown("### 📘 Notebook en Google Colab")
 
 st.markdown(
@@ -156,3 +154,4 @@ st.markdown("""
 **Author:** Julio Alberto Cárdenas Rincón  
 **Cod ISIL:** 45862810
 """)
+st.markdown("---")
