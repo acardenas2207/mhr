@@ -74,17 +74,17 @@ else:
 
 st.subheader("Ingrese los datos médicos")
 
-Age = st.number_input("Age", min_value=1, max_value=100, value=25)
+Age = st.number_input("Edad", min_value=1, max_value=100, value=25)
 
-SystolicBP = st.number_input("SystolicBP", min_value=50, max_value=250, value=120)
+SystolicBP = st.number_input("Presión Sistólica", min_value=50, max_value=250, value=120)
 
-DiastolicBP = st.number_input("DiastolicBP", min_value=30, max_value=200, value=80)
+DiastolicBP = st.number_input("Presión Diastólica", min_value=30, max_value=200, value=80)
 
-BS = st.number_input("BS (Blood Sugar)", min_value=0.0, max_value=30.0, value=6.5)
+BS = st.number_input("Nivel de azúcar", min_value=0.0, max_value=30.0, value=6.5)
 
-BodyTemp = st.number_input("BodyTemp", min_value=90.0, max_value=110.0, value=98.0)
+BodyTemp = st.number_input("Temperatura", min_value=90.0, max_value=110.0, value=98.0)
 
-HeartRate = st.number_input("HeartRate", min_value=40, max_value=200, value=75)
+HeartRate = st.number_input("Frecuencia Cardíaca", min_value=40, max_value=200, value=75)
 
 # ==========================================
 # DATAFRAME PARA PREDICCIÓN
