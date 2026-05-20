@@ -1,0 +1,37 @@
+PROMPT:
+
+Genera una página web en Streamlit desde GitHub. Esta página contendrá un modelo entrenado para predecir el nivel de riesgo materno utilizando el dataset Maternal Health Risk.
+
+Tengo dos modelos generados con joblib:
+- logistic_regression_model.pkl
+- decision_tree_model.pkl
+
+Ambos modelos están almacenados en GitHub dentro de una carpeta llamada "MRH".
+
+Quiero que el usuario ingrese los valores requeridos para las siguientes columnas del dataset:
+
+- Age
+- SystolicBP
+- DiastolicBP
+- BS
+- BodyTemp
+- HeartRate
+
+Tener en cuenta que el target se llama "RiskLevel".
+
+La página debe permitir:
+- Seleccionar el modelo a utilizar.
+- Ingresar los valores mediante inputs numéricos.
+- Presionar un botón para obtener la predicción.
+- Mostrar como resultado el nivel de riesgo predicho:
+  - low risk
+  - mid risk
+  - high risk
+
+Además:
+- Usa Streamlit para la interfaz.
+- Carga los modelos directamente desde GitHub.
+- Agrega un título y una breve descripción del proyecto.
+- Muestra mensajes amigables para el usuario.
+- Usa pandas, joblib y scikit-learn.
+- La aplicación debe quedar lista para desplegarse en Streamlit Cloud.
